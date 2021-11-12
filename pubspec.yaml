@@ -97,25 +97,25 @@ flutter:
         - asset: assets/fonts/Metropolis-ThinItalic.otf   
      - family: Montserrat
        fonts:
-        - asset: assets/fonts/Montserrat-Regular.otf
-        - asset: assets/fonts/Montserrat-Italic.otf
+        - asset: assets/fonts/Montserrat-Regular.ttf
+        - asset: assets/fonts/Montserrat-Italic.ttf
           style: italic
-        - asset: assets/fonts/Montserrat-Black.otf
-        - asset: assets/fonts/Montserrat-BlackItalic.otf
-        - asset: assets/fonts/Montserrat-Bold.otf
-        - asset: assets/fonts/Montserrat-BoldItalic.otf
-        - asset: assets/fonts/Montserrat-ExtraBold.otf
-        - asset: assets/fonts/Montserrat-ExtraBoldItalic.otf
-        - asset: assets/fonts/Montserrat-ExtraLight.otf
-        - asset: assets/fonts/Montserrat-ExtraLightItalic.otf
-        - asset: assets/fonts/Montserrat-Light.otf
-        - asset: assets/fonts/Montserrat-LightItalic.otf
-        - asset: assets/fonts/Montserrat-Medium.otf
-        - asset: assets/fonts/Montserrat-MediumItalic.otf
-        - asset: assets/fonts/Montserrat-SemiBold.otf
-        - asset: assets/fonts/Montserrat-SemiBoldItalic.otf
-        - asset: assets/fonts/Montserrat-Thin.otf
-        - asset: assets/fonts/Montserrat-ThinItalic.otf 
+        - asset: assets/fonts/Montserrat-Black.ttf
+        - asset: assets/fonts/Montserrat-BlackItalic.ttf
+        - asset: assets/fonts/Montserrat-Bold.ttf
+        - asset: assets/fonts/Montserrat-BoldItalic.ttf
+        - asset: assets/fonts/Montserrat-ExtraBold.ttf
+        - asset: assets/fonts/Montserrat-ExtraBoldItalic.ttf
+        - asset: assets/fonts/Montserrat-ExtraLight.ttf
+        - asset: assets/fonts/Montserrat-ExtraLightItalic.ttf
+        - asset: assets/fonts/Montserrat-Light.ttf
+        - asset: assets/fonts/Montserrat-LightItalic.ttf
+        - asset: assets/fonts/Montserrat-Medium.ttf
+        - asset: assets/fonts/Montserrat-MediumItalic.ttf
+        - asset: assets/fonts/Montserrat-SemiBold.ttf
+        - asset: assets/fonts/Montserrat-SemiBoldItalic.ttf
+        - asset: assets/fonts/Montserrat-Thin.ttf
+        - asset: assets/fonts/Montserrat-ThinItalic.ttf 
 
 
         
