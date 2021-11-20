@@ -1,6 +1,6 @@
-import 'package:cpe_application/routing_constants.dart';
+import 'package:cpe_alert/routing_constants.dart';
 import 'package:flutter/material.dart';
-import 'package:cpe_application/router.dart' as router;
+import 'package:cpe_alert/router.dart' as router;
 
 void main() {
   runApp(const MyApp());
