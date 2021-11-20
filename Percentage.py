@@ -5,12 +5,12 @@ def main():
     if Selection == 1:
         print("Please Enter Height: ")
         Height =  int(input())
-        calculation = (Height / 812) *100
+        calculation = (Height / 812) 
         print("A percentage of Height is " + str(calculation))
     elif Selection == 2:
         print("Please Enter Width: ")
         Width =  int(input())
-        calculation = (Width / 375) *100
+        calculation = (Width / 375) 
         print("A percentage of Width is " + str(calculation))
     else:
         print("Error")

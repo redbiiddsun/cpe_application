@@ -1,4 +1,5 @@
 import 'package:cpe_alert/routing_constants.dart';
+import 'package:cpe_alert/screen_information.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 
@@ -16,6 +17,7 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
+    ScreenInformation.init(context);
     return Scaffold(
       backgroundColor: const Color(0xFFFFFFFF),
       body: GestureDetector(
@@ -133,7 +135,8 @@ class _LoginState extends State<Login> {
                         child: TextButton(
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
-                              //Navigator.pushReplacementNamed(context, MainRoute);
+                              Navigator.pushReplacementNamed(
+                                  context, MainRoute);
                             } else {}
                           },
                           child: const Text(
