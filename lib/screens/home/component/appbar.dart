@@ -35,26 +35,29 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
               Padding(
                 padding: EdgeInsets.only(
                     left: ScreenInformation.screenWidth! * 0.04),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Hi, Phanasorn",
-                      style: TextStyle(
-                        fontFamily: "Montserrat",
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
+                child: Container(
+                  margin: ScreenInformation.screenNotch,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: const [
+                      Text(
+                        "Hi, Phanasorn",
+                        style: TextStyle(
+                          fontFamily: "Montserrat",
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                    ),
-                    Text(
-                      "64070503436",
-                      style: TextStyle(
-                        fontFamily: "Montserrat",
-                        fontSize: 18,
+                      Text(
+                        "64070503436",
+                        style: TextStyle(
+                          fontFamily: "Montserrat",
+                          fontSize: 18,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               )
             ],
