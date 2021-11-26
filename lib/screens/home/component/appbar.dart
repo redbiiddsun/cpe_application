@@ -29,8 +29,12 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
                 width: 75,
                 height: 75,
                 decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(40)),
-                    color: Colors.black),
+                  borderRadius: BorderRadius.all(Radius.circular(40)),
+                  image: const DecorationImage(
+                    image: AssetImage("assets/image/3436_STD.jpg"),
+                    fit: BoxFit.cover,
+                  ),
+                ),
               ),
               Padding(
                 padding: EdgeInsets.only(
