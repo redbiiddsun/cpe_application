@@ -1,5 +1,6 @@
 import 'package:cpe_alert/const.dart';
 import 'package:cpe_alert/screen_information.dart';
+import 'package:cpe_alert/screens/class/class.dart';
 import 'package:cpe_alert/screens/home/home.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,7 @@ class _MainScreenState extends State<MainScreen> {
   List<Widget> pageList = <Widget>[
     // ignore: prefer_const_constructors
     Home(),
-    Home(),
+    Class(),
     Home(),
   ];
   @override
@@ -35,7 +36,7 @@ class _MainScreenState extends State<MainScreen> {
             BottomNavigationBarItem(
                 icon: Icon(Icons.home_rounded), label: "Home"),
             BottomNavigationBarItem(
-                icon: Icon(Icons.local_activity), label: "Activity"),
+                icon: Icon(Icons.local_activity), label: "Class"),
             BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
           ],
         ),

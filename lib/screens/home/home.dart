@@ -1,6 +1,8 @@
+import 'package:cpe_alert/routing_constants.dart';
 import 'package:cpe_alert/screen_information.dart';
 import 'package:cpe_alert/screens/home/component/appbar.dart';
 import 'package:cpe_alert/screens/home/component/calendarcard.dart';
+import 'package:cpe_alert/screens/home/component/calendarclasscard.dart';
 import 'package:cpe_alert/screens/home/component/menu.dart';
 import 'package:flutter/material.dart';
 import 'package:date_picker_timeline/date_picker_timeline.dart';
@@ -40,17 +42,19 @@ class _HomeState extends State<Home> {
                     title: "Zoom",
                     image: AssetImage("assets/image/zoom-icon-logo.png"),
                     onTap: () {
-                      print("object");
+                      Navigator.pushNamed(context, ClassRoute);
                     },
                   ),
                   MenuSelcetion(
                     title: "Assignment",
+                    color: const Color(0xFFD0F1EB),
                     onTap: () {
                       print("print");
                     },
                   ),
                   MenuSelcetion(
                       title: "Classmate",
+                      color: const Color(0xFFFDC9D2),
                       onTap: () {
                         print("1");
                       }),
@@ -104,7 +108,10 @@ class _HomeState extends State<Home> {
                         ))
                   ],
                 ),
-              )
+              ),
+              ClassCard(),
+              ClassCard(),
+              ClassCard(),
             ],
           ),
         ),
