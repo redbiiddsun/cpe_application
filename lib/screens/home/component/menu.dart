@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class MenuSelcetion extends StatelessWidget {
   final String? title;
   final IconData? icon;
+  final Color? color;
   final ImageProvider<Object> image;
   final VoidCallback? onTap;
 
@@ -11,6 +12,7 @@ class MenuSelcetion extends StatelessWidget {
     Key? key,
     this.title = "NULL",
     this.icon = Icons.help_outlined,
+    this.color = const Color(0xFFDED2F9),
     this.image = const AssetImage("assets/image/3436_STD.jpg"),
     this.onTap,
   }) : super(key: key);
@@ -24,7 +26,7 @@ class MenuSelcetion extends StatelessWidget {
         height: ScreenInformation.screenHeight! * 0.163,
         width: ScreenInformation.screenWidth! * 0.25,
         decoration: BoxDecoration(
-          color: const Color(0xFFDED2F9),
+          color: color,
           borderRadius: BorderRadius.circular(20),
         ),
         child: Column(
@@ -49,9 +51,9 @@ class MenuSelcetion extends StatelessWidget {
               child: Text(
                 title!,
                 style: const TextStyle(
-                    fontFamily: "Metropolis",
-                    fontSize: 15.38,
-                    fontWeight: FontWeight.w700),
+                    fontFamily: "Poppins",
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold),
               ),
             )
           ],
