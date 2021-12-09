@@ -19,7 +19,7 @@ class ClassCard extends StatelessWidget {
           left: ScreenInformation.screenWidth! * 0.0533),
       decoration: BoxDecoration(
         color: Color(0xFFD3E1FF),
-        borderRadius: BorderRadius.circular(13),
+        borderRadius: BorderRadius.circular(20),
       ),
       child: Row(
         children: [
