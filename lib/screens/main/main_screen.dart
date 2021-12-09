@@ -2,6 +2,7 @@ import 'package:cpe_alert/const.dart';
 import 'package:cpe_alert/screen_information.dart';
 import 'package:cpe_alert/screens/class/class.dart';
 import 'package:cpe_alert/screens/home/home.dart';
+import 'package:cpe_alert/screens/notification/notification.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatefulWidget {
@@ -17,7 +18,7 @@ class _MainScreenState extends State<MainScreen> {
     // ignore: prefer_const_constructors
     Home(),
     Class(),
-    Home(),
+    NotificationScreen(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -37,7 +38,8 @@ class _MainScreenState extends State<MainScreen> {
                 icon: Icon(Icons.home_rounded), label: "Home"),
             BottomNavigationBarItem(
                 icon: Icon(Icons.local_activity), label: "Class"),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.notifications), label: "Notification"),
           ],
         ),
       ),
