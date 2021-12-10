@@ -49,14 +49,14 @@ class _HomeState extends State<Home> {
                     title: "Assignment",
                     color: const Color(0xFFD0F1EB),
                     onTap: () {
-                      print("print");
+                      Navigator.pushNamed(context, AssignmentRoute);
                     },
                   ),
                   MenuSelcetion(
                       title: "Classmate",
                       color: const Color(0xFFFDC9D2),
                       onTap: () {
-                        print("1");
+                        Navigator.pushNamed(context, ClassmateRoute);
                       }),
                 ],
               ),
