@@ -40,7 +40,7 @@ dependencies:
   date_picker_timeline: ^1.2.3
   firebase_core: ^1.10.5
   firebase_auth: ^3.3.3
-
+  splash_screen_view: ^3.0.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
