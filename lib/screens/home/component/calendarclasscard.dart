@@ -1,8 +1,8 @@
 import 'package:cpe_alert/screen_information.dart';
 import 'package:flutter/material.dart';
 
-class ClassCard extends StatelessWidget {
-  const ClassCard({
+class CalendarClassCard extends StatelessWidget {
+  const CalendarClassCard({
     Key? key,
   }) : super(key: key);
 
