@@ -9,6 +9,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       Size.fromHeight(ScreenInformation.screenHeight! * 0.168);
 
   @override
+  @override
   Widget build(BuildContext context) {
     return Container(
         height: ScreenInformation.screenHeight! * 0.20,
@@ -22,6 +23,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
               left: ScreenInformation.screenWidth! * 0.0533,
               right: ScreenInformation.screenWidth! * 0.0533),
           child: Row(
+            //mainAxisAlignment: MainAxisAlignment.,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
@@ -61,6 +63,26 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
                         ),
                       ),
                     ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: ScreenInformation.screenWidth! * 0.1,
+              ),
+              Expanded(
+                child: Container(
+                  margin: ScreenInformation.screenNotch,
+                  child: PopupMenuButton(
+                    itemBuilder: (context) => const [
+                      PopupMenuItem(
+                        child: Text("Logout"),
+                        value: "Logout",
+                      )
+                    ],
+                    onSelected: (value) {
+                      if (value == "Logout") {
+                      } else {}
+                    },
                   ),
                 ),
               )
