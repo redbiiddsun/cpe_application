@@ -1,4 +1,5 @@
 import 'package:email_validator/email_validator.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class ForgotPassword extends StatefulWidget {
@@ -10,6 +11,25 @@ class ForgotPassword extends StatefulWidget {
 
 class _ForgotPasswordState extends State<ForgotPassword> {
   final _formKey = GlobalKey<FormState>();
+
+  late String _email;
+  final auth = FirebaseAuth.instance;
+
+  void sendPasswordResetEmail() async {
+    try {
+      await auth.sendPasswordResetEmail(email: _email);
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'firebase_auth/invalid-continue-uri') {
+        print('URL Error');
+      } else if (e.code == 'auth/invalid-email' ||
+          e.code == 'auth/user-not-found') {
+        print('No user found for that email.');
+      }
+    } catch (e) {
+      print(e);
+    }
+    Navigator.pop(context);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,32 +72,39 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                       padding: const EdgeInsets.only(top: 31),
                       child: TextFormField(
                         validator: (value) {
-                          if (EmailValidator.validate(value!) | value.isEmpty) {
+                          if (EmailValidator.validate(value!) == true) {
+                          } else if (value.isEmpty) {
                             return 'Please fill your email';
-                          } else {}
+                          } else if (EmailValidator.validate(value) == false) {
+                            return 'Please check your email format';
+                          }
                         },
                         decoration: InputDecoration(
-                            hintText: "Enter your email address",
-                            labelStyle: const TextStyle(
-                              fontFamily: 'Montserrat',
-                              fontWeight: FontWeight.w500,
-                              fontSize: 13,
-                              color: Color(0xFF10182B),
+                          hintText: "Enter your email address",
+                          labelStyle: const TextStyle(
+                            fontFamily: 'Montserrat',
+                            fontWeight: FontWeight.w500,
+                            fontSize: 13,
+                            color: Color(0xFF10182B),
+                          ),
+                          filled: true,
+                          fillColor: const Color(0xFFCDD9E3),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(4),
+                            borderSide: const BorderSide(
+                              color: Color(0xFFCDD9E3),
                             ),
-                            filled: true,
-                            fillColor: const Color(0xFFCDD9E3),
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(4),
-                              borderSide: const BorderSide(
-                                color: Color(0xFFCDD9E3),
-                              ),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(4),
+                            borderSide: const BorderSide(
+                              color: Color(0xFFCDD9E3),
                             ),
-                            enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(4),
-                              borderSide: const BorderSide(
-                                color: Color(0xFFCDD9E3),
-                              ),
-                            )),
+                          ),
+                        ),
+                        onChanged: (value) {
+                          _email = value.trim();
+                        },
                       ),
                     ),
                     const SizedBox(height: 26),
@@ -90,7 +117,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                         ElevatedButton(
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
-                              //Navigator.pushReplacementNamed(context, MainRoute);
+                              sendPasswordResetEmail();
                             } else {
                               //For Warning User or Debug
                             }
