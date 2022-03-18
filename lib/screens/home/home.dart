@@ -18,6 +18,7 @@ class _HomeState extends State<Home> {
   DatePickerController _controller = DatePickerController();
 
   DateTime _selectedValue = DateTime.now();
+  int dateselect = 1;
 
   @override
   void initState() {
@@ -35,8 +36,117 @@ class _HomeState extends State<Home> {
     Navigator.pushReplacementNamed(context, LoginRoute);
   }
 
+  final monday = [
+    [
+      "MTH101",
+      "Mathematics",
+      "8:30",
+      "10:30",
+      "Zoom",
+      "Songpon",
+      "https://kmutt-ac-th.zoom.us/j/92218683317"
+    ],
+  ];
+
+  final tuesday = [
+    [
+      "CPE100",
+      "COMPUTER PROGRAMMING FORENGINEERS",
+      "8:30",
+      "10:30",
+      "Zoom",
+      "Natacha",
+      "https://us06web.zoom.us/j/8672073434?pwd=MnNMWXppK2YzTFpHdjFWc0JOdENCdz09"
+    ],
+    [
+      "MTH101",
+      "Mathematics",
+      "10:30",
+      "12:30",
+      "Zoom",
+      "Songpon",
+      "https://kmutt-ac-th.zoom.us/j/92218683317"
+    ],
+    [
+      "CPE100",
+      "COMPUTER PROGRAMMING FORENGINEERS (LAB)",
+      "13:30",
+      "15:30",
+      "Zoom",
+      "Natacha",
+      "https://us06web.zoom.us/j/8672073434?pwd=MnNMWXppK2YzTFpHdjFWc0JOdENCdz09"
+    ],
+  ];
+
+  final wednesday = [
+    [
+      "CPE123",
+      "USER EXPERIENCE/USER INTERFACE",
+      "10:30",
+      "12:30",
+      "Zoom",
+      "Ajan June",
+      "https://us06web.zoom.us/j/8672073434?pwd=MnNMWXppK2YzTFpHdjFWc0JOdENCdz09"
+    ],
+  ];
+
+  final thursday = [
+    [
+      "CPE123",
+      "USER EXPERIENCE/USER INTERFACE",
+      "10:30",
+      "12:30",
+      "Zoom",
+      "Ajan June"
+          "https://us06web.zoom.us/j/8672073434?pwd=MnNMWXppK2YzTFpHdjFWc0JOdENCdz09"
+    ],
+    [
+      "LNG221",
+      "ACADEMIC ENGLISH IN INTERNATIONAL CONTEXTS",
+      "13:30",
+      "15:30",
+      "Zoom",
+      "Ajan ....."
+          "https://line.me/R/ti/g/WkHQEkIA1R"
+    ],
+  ];
+
+  final friday = [
+    [
+      "CPE111",
+      "Discrete Mathematics for Computer Engineers",
+      "9:30",
+      "12:30",
+      "Zoom",
+      "Narumon"
+          "https://kmutt-ac-th.zoom.us/j/92218683317"
+    ],
+    [
+      "CPE101",
+      "Computer Programming for Engineers",
+      "15:30",
+      "17:30",
+      "Zoom",
+      "Jumpon"
+          "https://www.facebook.com/groups/4443556728990006"
+    ],
+  ];
+
   @override
   Widget build(BuildContext context) {
+    List<Widget> dateList = [
+      ListView.builder(
+          itemCount: 1,
+          itemBuilder: (BuildContext context, int index) {
+            return CalendarClassCard(
+              classNo: monday[index][1],
+              place: monday[index][4],
+              startTime: monday[index][2],
+              endTime: monday[index][3],
+              professor: monday[index][5],
+            );
+          }),
+    ];
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(ScreenInformation.screenHeight! * 0.168),
@@ -141,6 +251,8 @@ class _HomeState extends State<Home> {
                   MenuSelcetion(
                     title: "Assignment",
                     color: const Color(0xFFD0F1EB),
+                    image: AssetImage("assets/image/work.png"),
+                    fit: BoxFit.cover,
                     onTap: () {
                       Navigator.pushNamed(context, AssignmentRoute);
                     },
@@ -148,6 +260,7 @@ class _HomeState extends State<Home> {
                   MenuSelcetion(
                       title: "Classmate",
                       color: const Color(0xFFFDC9D2),
+                      image: AssetImage("assets/image/people.jpg"),
                       onTap: () {
                         Navigator.pushNamed(context, ClassmateRoute);
                       }),
@@ -167,6 +280,7 @@ class _HomeState extends State<Home> {
                     // New date selected
                     setState(() {
                       _selectedValue = date;
+                      dateselect = date.weekday;
                     });
                   },
                 ),
@@ -202,9 +316,18 @@ class _HomeState extends State<Home> {
                   ],
                 ),
               ),
-              CalendarClassCard(),
-              CalendarClassCard(),
-              CalendarClassCard(),
+              CalendarClassCard(
+                classNo: "No Class",
+                place: "No Class",
+                startTime: "No Class",
+                endTime: "No Class",
+                professor: "No Class",
+              )
+              /*ListView.builder(
+                  itemCount: 1,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Container();
+                  }),*/
             ],
           ),
         ),

@@ -2,8 +2,10 @@ import 'package:cpe_alert/screen_information.dart';
 import 'package:flutter/material.dart';
 
 class NotificationCard extends StatelessWidget {
+  final String message;
   const NotificationCard({
     Key? key,
+    required this.message,
   }) : super(key: key);
 
   @override
@@ -19,7 +21,7 @@ class NotificationCard extends StatelessWidget {
       child: Row(
         children: [
           Text(
-            "CPE123 Have test on Monday ",
+            message,
             style: TextStyle(
               fontFamily: "Poppins",
               fontWeight: FontWeight.w600,

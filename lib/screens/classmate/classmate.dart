@@ -7,6 +7,13 @@ class Classmate extends StatefulWidget {
   _ClassmateState createState() => _ClassmateState();
 }
 
+List<String> nameList = [
+  "64070503436 พณศร ศรีสยาม",
+  "64070503439 พิชญฎา สงฆ์รักษ์",
+  "64070503474 วีรภัทร ทุนหิรัญกร",
+  "64070503463 ญาณวุฒิ ภาษาชีวะ",
+];
+
 class _ClassmateState extends State<Classmate> {
   @override
   Widget build(BuildContext context) {
@@ -28,17 +35,20 @@ class _ClassmateState extends State<Classmate> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),
-        child: ListView(
-          children: [
-            ListTile(
-              leading: CircleAvatar(
-                radius: 30,
-                backgroundImage: AssetImage("assets/image/3436_STD.jpg"),
-              ),
-              title: Text("64070503436 Phanasorn srisayam"),
-            )
-          ],
-        ),
+        child: ListView.builder(
+            itemCount: 4,
+            itemBuilder: (BuildContext context, int index) {
+              return Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ListTile(
+                  leading: const CircleAvatar(
+                    radius: 30,
+                    //backgroundImage: AssetImage("assets/image/3436_STD.jpg"),
+                  ),
+                  title: Text(nameList[index]),
+                ),
+              );
+            }),
       ),
     );
   }

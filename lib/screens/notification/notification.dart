@@ -28,7 +28,19 @@ class _NotificationScreenState extends State<NotificationScreen> {
           ),
         ),
       ),
-      body: NotificationCard(),
+      body: Column(
+        children: [
+          NotificationCard(
+            message: 'CPE111 Final Exam on 13 Mondoay',
+          ),
+          NotificationCard(
+            message: 'CPE101 Project Submittion is Tomorrow',
+          ),
+          NotificationCard(
+            message: 'CPE101 Project Presentation  on 16 Thursday',
+          ),
+        ],
+      ),
     );
   }
 }

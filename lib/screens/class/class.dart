@@ -52,6 +52,7 @@ class _ClassState extends State<Class> {
       "LNG221",
       "ACADEMIC ENGLISH IN INTERNATIONAL CONTEXTS",
       "Thursday, 13:30-15:30",
+      "",
       "https://line.me/R/ti/g/WkHQEkIA1R"
     ],
   ];

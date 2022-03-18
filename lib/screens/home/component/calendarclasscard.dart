@@ -2,8 +2,21 @@ import 'package:cpe_alert/screen_information.dart';
 import 'package:flutter/material.dart';
 
 class CalendarClassCard extends StatelessWidget {
+  final String classNo;
+  final String content;
+  final String place;
+  final String professor;
+  final String startTime;
+  final String endTime;
+
   const CalendarClassCard({
     Key? key,
+    required this.classNo,
+    this.content = "",
+    required this.place,
+    this.professor = "",
+    required this.startTime,
+    required this.endTime,
   }) : super(key: key);
 
   @override
@@ -19,10 +32,10 @@ class CalendarClassCard extends StatelessWidget {
               padding: const EdgeInsets.only(left: 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children: [
                   Text(
-                    "10:30",
-                    style: TextStyle(
+                    startTime,
+                    style: const TextStyle(
                       fontFamily: "Poppins",
                       fontWeight: FontWeight.w500,
                       fontSize: 16,
@@ -30,8 +43,8 @@ class CalendarClassCard extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    "12:30",
-                    style: TextStyle(
+                    endTime,
+                    style: const TextStyle(
                       fontFamily: "Poppins",
                       fontWeight: FontWeight.w500,
                       fontSize: 14,
@@ -56,8 +69,8 @@ class CalendarClassCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "CPE123",
-                      style: TextStyle(
+                      classNo,
+                      style: const TextStyle(
                         fontFamily: "Poppins",
                         fontWeight: FontWeight.w600,
                         fontSize: 16,
@@ -69,8 +82,8 @@ class CalendarClassCard extends StatelessWidget {
                           top: ScreenInformation.screenHeight! * 0.0086,
                           bottom: ScreenInformation.screenHeight! * 0.0197),
                       child: Text(
-                        "Week 10 : Figma",
-                        style: TextStyle(
+                        content,
+                        style: const TextStyle(
                           fontFamily: "Poppins",
                           fontWeight: FontWeight.w500,
                           fontSize: 12,
@@ -79,10 +92,7 @@ class CalendarClassCard extends StatelessWidget {
                       ),
                     ),
                     Row(
-                      children: [
-                        Icon(Icons.location_on_outlined),
-                        Text("Zoom")
-                      ],
+                      children: [Icon(Icons.location_on_outlined), Text(place)],
                     ),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -90,13 +100,13 @@ class CalendarClassCard extends StatelessWidget {
                         Padding(
                           padding: EdgeInsetsDirectional.only(
                               top: ScreenInformation.screenHeight! * 0.0086),
-                          child: CircleAvatar(
+                          child: const CircleAvatar(
                             radius: 10,
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.only(left: 10),
-                          child: Text("Phanasorn Srisayam"),
+                          padding: const EdgeInsets.only(left: 10),
+                          child: Text(professor),
                         ),
                       ],
                     ),

@@ -7,6 +7,7 @@ class MenuSelcetion extends StatelessWidget {
   final Color? color;
   final ImageProvider<Object> image;
   final VoidCallback? onTap;
+  final BoxFit? fit;
 
   const MenuSelcetion({
     Key? key,
@@ -15,6 +16,7 @@ class MenuSelcetion extends StatelessWidget {
     this.color = const Color(0xFFDED2F9),
     this.image = const AssetImage("assets/image/3436_STD.jpg"),
     this.onTap,
+    this.fit = BoxFit.cover,
   }) : super(key: key);
 
   @override
@@ -41,7 +43,7 @@ class MenuSelcetion extends StatelessWidget {
                 borderRadius: BorderRadius.circular(30),
                 image: DecorationImage(
                   image: image,
-                  fit: BoxFit.cover,
+                  fit: fit,
                 ),
               ),
             ),

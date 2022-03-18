@@ -1,4 +1,5 @@
 import 'package:cpe_alert/routing_constants.dart';
+import 'package:cpe_alert/screen_information.dart';
 import 'package:cpe_alert/screens/main/main_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -8,7 +9,7 @@ import 'package:cpe_alert/router.dart' as router;
 Future<Null> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp().then((value) async {
-    await FirebaseAuth.instance.authStateChanges().listen((event) {
+    FirebaseAuth.instance.authStateChanges().listen((event) {
       if (event != null) {
         //if user login
         // ignore: unused_local_variable

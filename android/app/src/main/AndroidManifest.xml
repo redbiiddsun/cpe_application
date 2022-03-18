@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.cpe_application">
    <application
-        android:label="cpe_application"
+        android:label="CPE Alert"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

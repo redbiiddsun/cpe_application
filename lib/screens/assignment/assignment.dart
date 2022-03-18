@@ -46,14 +46,13 @@ class _AssignmentState extends State<Assignment> {
 List<Meeting> _getDataSource() {
   final List<Meeting> meetings = <Meeting>[];
   final DateTime today = DateTime.now();
-  final DateTime startTime =
-      DateTime(today.year, today.month, today.day, 13, 30, 0);
+  final DateTime startTime = DateTime(today.year, today.month, 13, 13, 30, 0);
   final DateTime endTime = startTime.add(const Duration(hours: 3));
 
-  final tmr = DateTime(today.year, today.month, today.day + 1, 00, 00, 0);
+  final tmr = DateTime(today.year, today.month, 14, 00, 00, 0);
   final DateTime tmrEndTime = startTime.add(const Duration(hours: 24));
 
-  final tmr2 = DateTime(today.year, today.month, today.day + 3, 0, 0, 0);
+  final tmr2 = DateTime(today.year, today.month, 16, 0, 0, 0);
   final DateTime tmrEndTime2 = startTime.add(const Duration(hours: 12));
 
   //final DateTime
